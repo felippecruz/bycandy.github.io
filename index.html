@@ -7,8 +7,42 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 <body>
-  <h1 class="text-3xl font-bold underline">
-      Hello world!
-    </h1>  
+    <nav class="bg-pink-500 text-white shadow-md">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+          <div class="flex items-center">
+            <span class="font-bold text-xl">ByCandy</span>
+          </div>
+          <div class="hidden md:block">
+            <div class="ml-10 flex items-baseline space-x-4">
+              <a href="#" class="hover:bg-pink-600 px-3 py-2 rounded-md text-sm font-medium">Home</a>
+              <a href="#" class="hover:bg-pink-600 px-3 py-2 rounded-md text-sm font-medium">Produtos</a>
+              <a href="#" class="hover:bg-pink-600 px-3 py-2 rounded-md text-sm font-medium">Sobre</a>
+              <a href="#" class="hover:bg-pink-600 px-3 py-2 rounded-md text-sm font-medium">Contato</a>
+            </div>
+          </div>
+          <div class="md:hidden flex items-center">
+            <button id="mobile-menu-button" class="focus:outline-none">
+              <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div id="mobile-menu" class="md:hidden hidden px-2 pt-2 pb-3 space-y-1 bg-pink-500">
+        <a href="#" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-pink-600">Home</a>
+        <a href="#" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-pink-600">Produtos</a>
+        <a href="#" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-pink-600">Sobre</a>
+        <a href="#" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-pink-600">Contato</a>
+      </div>
+    </nav>
+    <script>
+      const btn = document.getElementById('mobile-menu-button');
+      const menu = document.getElementById('mobile-menu');
+      btn.addEventListener('click', () => {
+        menu.classList.toggle('hidden');
+      });
+    </script>
 </body>
 </html>
